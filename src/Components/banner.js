@@ -60,8 +60,25 @@ class Home extends Component {
       swipe: true,
       autoplaySpeed: 5,
       pauseOnHover: true,
-      arrows: false
+      arrows: false,
+      // responsive: [
+      //   {
+      //     breakpoint: 320,
+      //     settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false }
+      //   },
+      //   {
+      //     breakpoint: 768,
+      //     settings: { slidesToShow: 2, slidesToScroll: 2, infinite: false }
+      //   },
+      //   {
+      //     breakpoint: 1024,
+      //     settings: { slidesToShow: 3, slidesToScroll: 3, infinite: false }
+      //   }
+      // ]
+      responsive: [{ breakpoint: 980, settings: { slidesToShow: 2, slidesToScroll: 2, initialSlide: 2 } }, { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } }]
     };
+  
+  
     return (
       <div >
         <div style={{ marginBottom: 60 }}>
@@ -71,22 +88,24 @@ class Home extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div style={{ marginBottom: 60, backgroundColor: '#40B2E7' }}  >
+        <div className="silder_set"  >
           <Slider {...settings}>
             {Object.values(data).map((item, index) => {
-              return <div style={{ display: 'flex', alignItems: 'stretch', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+              return <div >
                 {item.redirect === true ?
-                  <div style={{ padding: 20, width: '100%', display: 'flex', flexDirection: 'column', height: '100%' }} >
+                  <div  >
                     <Link to={item.route}>
-                      <div style={{ marginTop: 'auto' }}>
-                        <img src={item.img_url} alt={item.img_url} style={{ width: 'auto', height: 500 }} />
+                      <div style={{padding: 20 }}>
+                        <img src={item.img_url} alt={item.img_url} style={{ width: '100%' }} />
                       </div>
                     </Link>
                    </div>
                   :
-                  <div style={{ padding: 20}}>
+                  <div >
                   <Link to="/">
-                     <img src={item.img_url} alt="Banners" style={{width: 'auto', height: 500  }}/>
+                  <div style={{padding: 20 }}>
+                     <img src={item.img_url} alt="Banners" style={{width: '100%'  }}/>
+                     </div>
                      </Link>
                      </div> }
               </div>

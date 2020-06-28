@@ -65,11 +65,11 @@ class wallet extends Component {
           </Toolbar>
         </AppBar>
          <Grid container spacing={3}  direction="row"  justify="center" alignItems="center" style={{marginTop: 80}}>
-         <Grid item xs={12} className={classes.wallet4}>
+         <Grid item xs={12} sm={12} className={classes.wallet4}>
            <Typography style={{fontSize: 25}}>TOTAL BALANCE ₹115</Typography>
              <Typography>0 withdrawal in progress</Typography>
          </Grid>
-         <Grid item xs={12}>
+         <Grid item xs={12} sm={12}>
            <Paper style={{padding:18}}>
              <Typography className={classes.wallet1} >550 withdrawal in progress..</Typography>
              <Typography  className={classes.wallet2}>withdrown from your winnings</Typography>
